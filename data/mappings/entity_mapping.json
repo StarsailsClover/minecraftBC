@@ -1,0 +1,582 @@
+{
+  "schema_version": "1.0",
+  "description": "Minecraft Entity ID to Generic Entity Mapping",
+  "last_updated": "2026-05-23",
+  "mappings": [
+    {
+      "generic_id": "generic:player",
+      "generic_type": "PLAYER",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:player",
+          "1.13+": "minecraft:player",
+          "entity_type_id": "minecraft:player"
+        },
+        "miniworld": {
+          "entity_id": 1,
+          "name": "玩家"
+        },
+        "roblox": {
+          "model": "rbxassetid://player_default"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.8,
+        "health": 20.0,
+        "max_health": 20.0,
+        "armor": 0.0,
+        "speed": 0.1,
+        "can_fly": false,
+        "inventory_slots": 36
+      }
+    },
+    {
+      "generic_id": "generic:zombie",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:zombie",
+          "1.13+": "minecraft:zombie",
+          "entity_type_id": "minecraft:zombie",
+          "properties": {"is_baby": false, "is_villager": false}
+        },
+        "miniworld": {
+          "entity_id": 32,
+          "name": "僵尸"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.95,
+        "health": 20.0,
+        "max_health": 20.0,
+        "armor": 2.0,
+        "attack_damage": 3.0,
+        "speed": 0.23,
+        "can_fly": false,
+        "burns_in_sunlight": true,
+        "spawn_conditions": ["darkness", "surface_night"]
+      }
+    },
+    {
+      "generic_id": "generic:skeleton",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:skeleton",
+          "1.13+": "minecraft:skeleton",
+          "entity_type_id": "minecraft:skeleton"
+        },
+        "miniworld": {
+          "entity_id": 34,
+          "name": "骷髅"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.99,
+        "health": 20.0,
+        "max_health": 20.0,
+        "armor": 0.0,
+        "attack_damage": 4.0,
+        "ranged_damage": [1, 4],
+        "speed": 0.25,
+        "can_fly": false,
+        "burns_in_sunlight": true,
+        "spawn_conditions": ["darkness", "surface_night"]
+      }
+    },
+    {
+      "generic_id": "generic:creeper",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:creeper",
+          "1.13+": "minecraft:creeper",
+          "entity_type_id": "minecraft:creeper",
+          "properties": {"fuse": 30, "powered": false}
+        },
+        "miniworld": {
+          "entity_id": 33,
+          "name": "苦力怕"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.7,
+        "health": 20.0,
+        "max_health": 20.0,
+        "armor": 0.0,
+        "explosion_damage": 49.0,
+        "explosion_radius": 3.0,
+        "speed": 0.25,
+        "can_fly": false,
+        "spawn_conditions": ["darkness"]
+      }
+    },
+    {
+      "generic_id": "generic:spider",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:spider",
+          "1.13+": "minecraft:spider",
+          "entity_type_id": "minecraft:spider"
+        },
+        "miniworld": {
+          "entity_id": 35,
+          "name": "蜘蛛"
+        }
+      },
+      "properties": {
+        "width": 1.4,
+        "height": 0.9,
+        "health": 16.0,
+        "max_health": 16.0,
+        "armor": 0.0,
+        "attack_damage": 2.0,
+        "speed": 0.3,
+        "can_climb": true,
+        "can_fly": false,
+        "spawn_conditions": ["darkness"]
+      }
+    },
+    {
+      "generic_id": "generic:enderman",
+      "generic_type": "MOB_NEUTRAL",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:enderman",
+          "1.13+": "minecraft:enderman",
+          "entity_type_id": "minecraft:enderman"
+        },
+        "miniworld": {
+          "entity_id": 38,
+          "name": "末影人"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 2.9,
+        "health": 40.0,
+        "max_health": 40.0,
+        "armor": 0.0,
+        "attack_damage": 7.0,
+        "speed": 0.3,
+        "can_teleport": true,
+        "can_fly": false,
+        "water_damage": true,
+        "spawn_conditions": ["end", "overworld_night_rare"]
+      }
+    },
+    {
+      "generic_id": "generic:pig",
+      "generic_type": "MOB_PASSIVE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:pig",
+          "1.13+": "minecraft:pig",
+          "entity_type_id": "minecraft:pig",
+          "properties": {"saddled": false}
+        },
+        "miniworld": {
+          "entity_id": 90,
+          "name": "猪"
+        }
+      },
+      "properties": {
+        "width": 0.9,
+        "height": 0.9,
+        "health": 10.0,
+        "max_health": 10.0,
+        "armor": 0.0,
+        "speed": 0.25,
+        "can_fly": false,
+        "can_ride": true,
+        "spawn_conditions": ["grass", "surface"]
+      }
+    },
+    {
+      "generic_id": "generic:cow",
+      "generic_type": "MOB_PASSIVE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:cow",
+          "1.13+": "minecraft:cow",
+          "entity_type_id": "minecraft:cow"
+        },
+        "miniworld": {
+          "entity_id": 91,
+          "name": "牛"
+        }
+      },
+      "properties": {
+        "width": 0.9,
+        "height": 1.4,
+        "health": 10.0,
+        "max_health": 10.0,
+        "armor": 0.0,
+        "speed": 0.2,
+        "can_fly": false,
+        "can_milk": true,
+        "spawn_conditions": ["grass", "surface"]
+      }
+    },
+    {
+      "generic_id": "generic:sheep",
+      "generic_type": "MOB_PASSIVE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:sheep",
+          "1.13+": "minecraft:sheep",
+          "entity_type_id": "minecraft:sheep",
+          "properties": {"color": "white", "sheared": false}
+        },
+        "miniworld": {
+          "entity_id": 91,
+          "name": "绵羊"
+        }
+      },
+      "properties": {
+        "width": 0.9,
+        "height": 1.3,
+        "health": 8.0,
+        "max_health": 8.0,
+        "armor": 0.0,
+        "speed": 0.23,
+        "can_fly": false,
+        "can_shear": true,
+        "spawn_conditions": ["grass", "surface"]
+      }
+    },
+    {
+      "generic_id": "generic:chicken",
+      "generic_type": "MOB_PASSIVE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:chicken",
+          "1.13+": "minecraft:chicken",
+          "entity_type_id": "minecraft:chicken"
+        },
+        "miniworld": {
+          "entity_id": 93,
+          "name": "鸡"
+        }
+      },
+      "properties": {
+        "width": 0.4,
+        "height": 0.7,
+        "health": 4.0,
+        "max_health": 4.0,
+        "armor": 0.0,
+        "speed": 0.25,
+        "can_fly": true,
+        "fall_slowly": true,
+        "spawn_conditions": ["grass", "surface"]
+      }
+    },
+    {
+      "generic_id": "generic:villager",
+      "generic_type": "NPC",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:villager",
+          "1.13+": "minecraft:villager",
+          "entity_type_id": "minecraft:villager",
+          "properties": {"profession": "none", "level": 1}
+        },
+        "miniworld": {
+          "entity_id": 120,
+          "name": "村民"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.95,
+        "health": 20.0,
+        "max_health": 20.0,
+        "armor": 0.0,
+        "speed": 0.5,
+        "can_fly": false,
+        "can_trade": true,
+        "spawn_conditions": ["village"]
+      }
+    },
+    {
+      "generic_id": "generic:item",
+      "generic_type": "ITEM",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:item",
+          "1.13+": "minecraft:item",
+          "entity_type_id": "minecraft:item"
+        },
+        "miniworld": {
+          "entity_id": 64,
+          "name": "掉落物"
+        }
+      },
+      "properties": {
+        "width": 0.25,
+        "height": 0.25,
+        "health": 5.0,
+        "max_health": 5.0,
+        "gravity": true,
+        "despawn_time": 300,
+        "can_be_picked_up": true
+      }
+    },
+    {
+      "generic_id": "generic:arrow",
+      "generic_type": "PROJECTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:arrow",
+          "1.13+": "minecraft:arrow",
+          "entity_type_id": "minecraft:arrow"
+        },
+        "miniworld": {
+          "entity_id": 80,
+          "name": "箭"
+        }
+      },
+      "properties": {
+        "width": 0.5,
+        "height": 0.5,
+        "damage": 2.0,
+        "gravity": true,
+        "despawn_time": 60,
+        "can_pickup": true
+      }
+    },
+    {
+      "generic_id": "generic:snowball",
+      "generic_type": "PROJECTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:snowball",
+          "1.13+": "minecraft:snowball",
+          "entity_type_id": "minecraft:snowball"
+        }
+      },
+      "properties": {
+        "width": 0.25,
+        "height": 0.25,
+        "damage": 0.0,
+        "knockback": 1.0,
+        "gravity": true,
+        "despawn_time": 60
+      }
+    },
+    {
+      "generic_id": "generic:boat",
+      "generic_type": "VEHICLE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:boat",
+          "1.13+": "minecraft:boat",
+          "entity_type_id": "minecraft:boat",
+          "properties": {"type": "oak"}
+        },
+        "miniworld": {
+          "entity_id": 41,
+          "name": "船"
+        }
+      },
+      "properties": {
+        "width": 1.375,
+        "height": 0.5625,
+        "health": 40.0,
+        "max_health": 40.0,
+        "max_passengers": 2,
+        "can_fly": false,
+        "floats": true,
+        "break_on_land": false
+      }
+    },
+    {
+      "generic_id": "generic:minecart",
+      "generic_type": "VEHICLE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:minecart",
+          "1.13+": "minecraft:minecart",
+          "entity_type_id": "minecraft:minecart"
+        },
+        "miniworld": {
+          "entity_id": 42,
+          "name": "矿车"
+        }
+      },
+      "properties": {
+        "width": 0.98,
+        "height": 0.7,
+        "health": 40.0,
+        "max_health": 40.0,
+        "max_passengers": 1,
+        "can_fly": false,
+        "requires_rails": true,
+        "speed_cap": 8.0
+      }
+    },
+    {
+      "generic_id": "generic:chest_minecart",
+      "generic_type": "VEHICLE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:chest_minecart",
+          "1.13+": "minecraft:chest_minecart",
+          "entity_type_id": "minecraft:chest_minecart"
+        }
+      },
+      "properties": {
+        "width": 0.98,
+        "height": 0.7,
+        "health": 40.0,
+        "max_health": 40.0,
+        "inventory_slots": 27,
+        "can_fly": false,
+        "requires_rails": true
+      }
+    },
+    {
+      "generic_id": "generic:ender_dragon",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:ender_dragon",
+          "1.13+": "minecraft:ender_dragon",
+          "entity_type_id": "minecraft:ender_dragon"
+        },
+        "miniworld": {
+          "entity_id": 63,
+          "name": "末影龙"
+        }
+      },
+      "properties": {
+        "width": 16.0,
+        "height": 8.0,
+        "health": 200.0,
+        "max_health": 200.0,
+        "armor": 0.0,
+        "attack_damage": 10.0,
+        "speed": 0.6,
+        "can_fly": true,
+        "boss": true,
+        "spawn_conditions": ["end_center"]
+      }
+    },
+    {
+      "generic_id": "generic:wither",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:wither",
+          "1.13+": "minecraft:wither",
+          "entity_type_id": "minecraft:wither"
+        }
+      },
+      "properties": {
+        "width": 0.9,
+        "height": 3.5,
+        "health": 300.0,
+        "max_health": 300.0,
+        "armor": 4.0,
+        "attack_damage": 15.0,
+        "ranged_damage": 8.0,
+        "speed": 0.6,
+        "can_fly": true,
+        "boss": true,
+        "spawn_conditions": ["player_constructed"]
+      }
+    },
+    {
+      "generic_id": "generic:witch",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:witch",
+          "1.13+": "minecraft:witch",
+          "entity_type_id": "minecraft:witch"
+        },
+        "miniworld": {
+          "entity_id": 66,
+          "name": "女巫"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.95,
+        "health": 26.0,
+        "max_health": 26.0,
+        "armor": 0.0,
+        "speed": 0.25,
+        "can_fly": false,
+        "can_throw_potions": true,
+        "spawn_conditions": ["swamp_hut", "raid"]
+      }
+    },
+    {
+      "generic_id": "generic:blaze",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:blaze",
+          "1.13+": "minecraft:blaze",
+          "entity_type_id": "minecraft:blaze"
+        },
+        "miniworld": {
+          "entity_id": 61,
+          "name": "烈焰人"
+        }
+      },
+      "properties": {
+        "width": 0.6,
+        "height": 1.8,
+        "health": 20.0,
+        "max_health": 20.0,
+        "armor": 0.0,
+        "attack_damage": 6.0,
+        "ranged_damage": 5.0,
+        "speed": 0.23,
+        "can_fly": true,
+        "fire_immune": true,
+        "water_damage": true,
+        "spawn_conditions": ["nether_fortress"]
+      }
+    },
+    {
+      "generic_id": "generic:ghast",
+      "generic_type": "MOB_HOSTILE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:ghast",
+          "1.13+": "minecraft:ghast",
+          "entity_type_id": "minecraft:ghast"
+        },
+        "miniworld": {
+          "entity_id": 56,
+          "name": "恶魂"
+        }
+      },
+      "properties": {
+        "width": 4.0,
+        "height": 4.0,
+        "health": 10.0,
+        "max_health": 10.0,
+        "armor": 0.0,
+        "ranged_damage": 17.0,
+        "speed": 0.3,
+        "can_fly": true,
+        "fire_immune": true,
+        "spawn_conditions": ["nether"]
+      }
+    }
+  ],
+  "fallbacks": {
+    "minecraft": "minecraft:pig",
+    "miniworld": 90,
+    "roblox": "rbxassetid://default_npc"
+  }
+}

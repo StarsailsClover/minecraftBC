@@ -1,0 +1,591 @@
+{
+  "schema_version": "1.0",
+  "description": "Minecraft Item ID to Generic Item Mapping",
+  "last_updated": "2026-05-23",
+  "mappings": [
+    {
+      "generic_id": "generic:stone",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:stone",
+          "1.13+": "minecraft:stone",
+          "properties": {"variant": 0}
+        },
+        "miniworld": {
+          "item_id": 1,
+          "name": "石头"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "is_food": false,
+        "is_tool": false,
+        "is_weapon": false,
+        "is_armor": false,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:grass_block",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:grass",
+          "1.13+": "minecraft:grass_block"
+        },
+        "miniworld": {
+          "item_id": 2,
+          "name": "草方块"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "is_food": false,
+        "is_tool": false,
+        "is_weapon": false,
+        "is_armor": false,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:dirt",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:dirt",
+          "1.13+": "minecraft:dirt"
+        },
+        "miniworld": {
+          "item_id": 3,
+          "name": "泥土"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:cobblestone",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:cobblestone",
+          "1.13+": "minecraft:cobblestone"
+        },
+        "miniworld": {
+          "item_id": 4,
+          "name": "圆石"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:planks_oak",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:planks",
+          "1.13+": "minecraft:oak_planks"
+        },
+        "miniworld": {
+          "item_id": 5,
+          "name": "橡木木板"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "is_fuel": true,
+        "burn_time": 300,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:sapling_oak",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:sapling",
+          "1.13+": "minecraft:oak_sapling"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "is_fuel": true,
+        "burn_time": 100,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:bedrock",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:bedrock",
+          "1.13+": "minecraft:bedrock"
+        },
+        "miniworld": {
+          "item_id": 7,
+          "name": "基岩"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "creative_only": true,
+        "rarity": "epic"
+      }
+    },
+    {
+      "generic_id": "generic:sand",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:sand",
+          "1.13+": "minecraft:sand"
+        },
+        "miniworld": {
+          "item_id": 12,
+          "name": "沙子"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:gravel",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:gravel",
+          "1.13+": "minecraft:gravel"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:log_oak",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:log",
+          "1.13+": "minecraft:oak_log"
+        },
+        "miniworld": {
+          "item_id": 17,
+          "name": "橡木"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "is_fuel": true,
+        "burn_time": 300,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:leaves_oak",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:leaves",
+          "1.13+": "minecraft:oak_leaves"
+        },
+        "miniworld": {
+          "item_id": 18,
+          "name": "橡树叶"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:glass",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:glass",
+          "1.13+": "minecraft:glass"
+        },
+        "miniworld": {
+          "item_id": 20,
+          "name": "玻璃"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_block": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:coal",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:coal",
+          "1.13+": "minecraft:coal"
+        },
+        "miniworld": {
+          "item_id": 263,
+          "name": "煤炭"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_fuel": true,
+        "burn_time": 1600,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:iron_ingot",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:iron_ingot",
+          "1.13+": "minecraft:iron_ingot"
+        },
+        "miniworld": {
+          "item_id": 265,
+          "name": "铁锭"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:gold_ingot",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:gold_ingot",
+          "1.13+": "minecraft:gold_ingot"
+        },
+        "miniworld": {
+          "item_id": 266,
+          "name": "金锭"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:diamond",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:diamond",
+          "1.13+": "minecraft:diamond"
+        },
+        "miniworld": {
+          "item_id": 264,
+          "name": "钻石"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "rare"
+      }
+    },
+    {
+      "generic_id": "generic:emerald",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:emerald",
+          "1.13+": "minecraft:emerald"
+        },
+        "miniworld": {
+          "item_id": 388,
+          "name": "绿宝石"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "rare",
+        "currency": true
+      }
+    },
+    {
+      "generic_id": "generic:stick",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:stick",
+          "1.13+": "minecraft:stick"
+        },
+        "miniworld": {
+          "item_id": 280,
+          "name": "木棍"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_fuel": true,
+        "burn_time": 100,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:bowl",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:bowl",
+          "1.13+": "minecraft:bowl"
+        },
+        "miniworld": {
+          "item_id": 281,
+          "name": "碗"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:string",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:string",
+          "1.13+": "minecraft:string"
+        },
+        "miniworld": {
+          "item_id": 287,
+          "name": "线"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:feather",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:feather",
+          "1.13+": "minecraft:feather"
+        },
+        "miniworld": {
+          "item_id": 288,
+          "name": "羽毛"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:gunpowder",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:gunpowder",
+          "1.13+": "minecraft:gunpowder"
+        },
+        "miniworld": {
+          "item_id": 289,
+          "name": "火药"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:wheat_seeds",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:wheat_seeds",
+          "1.13+": "minecraft:wheat_seeds"
+        },
+        "miniworld": {
+          "item_id": 295,
+          "name": "小麦种子"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_seed": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:wheat",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:wheat",
+          "1.13+": "minecraft:wheat"
+        },
+        "miniworld": {
+          "item_id": 296,
+          "name": "小麦"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:bread",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:bread",
+          "1.13+": "minecraft:bread"
+        },
+        "miniworld": {
+          "item_id": 297,
+          "name": "面包"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_food": true,
+        "nutrition": 5,
+        "saturation": 6.0,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:flint",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:flint",
+          "1.13+": "minecraft:flint"
+        },
+        "miniworld": {
+          "item_id": 318,
+          "name": "燧石"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:raw_porkchop",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:porkchop",
+          "1.13+": "minecraft:porkchop"
+        },
+        "miniworld": {
+          "item_id": 319,
+          "name": "生猪排"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_food": true,
+        "nutrition": 3,
+        "saturation": 0.6,
+        "is_meat": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:cooked_porkchop",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:cooked_porkchop",
+          "1.13+": "minecraft:cooked_porkchop"
+        },
+        "miniworld": {
+          "item_id": 320,
+          "name": "熟猪排"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_food": true,
+        "nutrition": 8,
+        "saturation": 12.8,
+        "is_meat": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:raw_beef",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:beef",
+          "1.13+": "minecraft:beef"
+        },
+        "miniworld": {
+          "item_id": 363,
+          "name": "生牛肉"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_food": true,
+        "nutrition": 3,
+        "saturation": 1.8,
+        "is_meat": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:cooked_beef",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:cooked_beef",
+          "1.13+": "minecraft:cooked_beef"
+        },
+        "miniworld": {
+          "item_id": 364,
+          "name": "牛排"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_food": true,
+        "nutrition": 8,
+        "saturation": 12.8,
+        "is_meat": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:raw_chicken",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:chicken",
+          "1.13+": "minecraft:chicken"
+        },
+        "miniworld": {
+          "item_id": 365,
+          "name": "生鸡肉"
+        }
+      },
+      "properties": {
+        "max_stack": 64,
+        "is_food": true,
+        "nutrition": 2,
+        "saturation": 1.2,
+        "is_meat": true,
+        "can_poison": true,
+        "rarity": "common"
+      }
+    },
+    {
+      "generic_id": "generic:cooked_chicken",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:cooked_chicken",
+          "1.13+": "minecraft:cooked_chicken"
+        },
+        "miniworld": {
+          "item

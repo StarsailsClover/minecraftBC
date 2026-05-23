@@ -1,0 +1,189 @@
+# minecraftBC Configuration
+# minecraftBC 配置文件
+
+# Node settings
+node:
+  name: "minecraftBC-Node"
+  # Auto-generated if not set
+  # id: ""
+  
+# Network settings
+network:
+  # P2P settings
+  p2p:
+    bind_host: "0.0.0.0"
+    bind_port: 0  # 0 = auto
+    
+    # NAT traversal
+    nat_traversal:
+      enabled: true
+      isp_detection: true
+      punch_attempts: 100
+      punch_interval_ms: 20
+      pre_mapping_seconds: 10
+    
+    # Heartbeat
+    heartbeat:
+      interval: 5.0  # seconds
+      timeout: 15.0  # seconds
+    
+    # DTLS encryption
+    encryption:
+      enabled: true
+      # Certificate paths (auto-generated if not set)
+      # cert_file: ""
+      # key_file: ""
+  
+  # Server settings
+  server:
+    bind_host: "0.0.0.0"
+    bind_port: 8765
+    
+    # Room defaults
+    room:
+      max_members: 100
+      default_visibility: "public"  # public, private, hidden
+      password_protected: false
+    
+    # State sync
+    sync:
+      interval: 1.0  # seconds
+      full_sync_interval: 30.0  # seconds
+    
+    # Reputation system
+    reputation:
+      enabled: true
+      initial_score: 100.0
+      penalty_threshold: 50.0
+  
+  # MnMCP proxy settings
+  mnmcp:
+    enabled: true
+    bind_host: "0.0.0.0"
+    bind_port: 25566  # Minecraft port + 1
+    
+    # Adapters
+    adapters:
+      minecraft:
+        enabled: true
+        version: "1.20.1"
+      miniworld:
+        enabled: false
+        # MiniWorld specific settings
+      roblox:
+        enabled: false
+        # Roblox specific settings
+    
+    # Entity sync
+    entity_sync:
+      enabled: true
+      rate_limit: 60  # updates per second
+      range: 128  # blocks
+    
+    # Block sync
+    block_sync:
+      enabled: true
+      batch_size: 100
+      
+    # Chat forwarding
+    chat:
+      enabled: true
+      format: "[{source}] {player}: {message}"
+
+# Minecraft settings
+minecraft:
+  # Version support
+  versions:
+    - "1.12.2"
+    - "1.16.5"
+    - "1.17.1"
+    - "1.18.2"
+    - "1.19.2"
+    - "1.19.4"
+    - "1.20.1"
+    - "1.20.4"
+  
+  # Protocol settings
+  protocol:
+    compression_threshold: 256
+    max_packet_size: 2097152  # 2MB
+    
+  # World sync
+  world:
+    chunk_range: 8  # chunks
+    entity_range: 128  # blocks
+    block_update_rate: 20  # per second
+
+# Mapping settings
+mappings:
+  # Data directory
+  data_dir: "data/mappings"
+  
+  # Auto-reload on change
+  auto_reload: true
+  
+  # Fallback behavior
+  fallback:
+    unknown_blocks: "minecraft:stone"
+    unknown_entities: "minecraft:pig"
+    unknown_items: "minecraft:stick"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logs/minecraftBC.log"
+  max_size: "10MB"
+  max_files: 5
+  
+  # Console output
+  console:
+    enabled: true
+    colors: true
+
+# Performance
+performance:
+  # Async workers
+  workers: 4
+  
+  # Connection limits
+  max_connections: 1000
+  max_peers: 100
+  
+  # Buffer sizes
+  send_buffer: 65536
+  recv_buffer: 65536
+  
+  # Timeouts
+  connect_timeout: 10.0
+  read_timeout: 30.0
+
+# Security
+security:
+  # Authentication
+  auth:
+    enabled: false
+    # Token or password for room access
+    # token: ""
+  
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    packets_per_second: 100
+    burst_size: 50
+  
+  # IP blocking
+  ip_blocklist: []
+  
+  # Allowlist (empty = allow all)
+  ip_allowlist: []
+
+# Debug
+debug:
+  # Packet logging
+  log_packets: false
+  
+  # Protocol analysis
+  protocol_debug: false
+  
+  # Performance profiling
+  profiling: false

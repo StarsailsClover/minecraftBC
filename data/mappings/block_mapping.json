@@ -1,0 +1,569 @@
+{
+  "schema_version": "1.0",
+  "description": "Minecraft Block ID to Generic Block Mapping",
+  "last_updated": "2026-05-23",
+  "mappings": [
+    {
+      "generic_id": "generic:stone",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:stone",
+          "1.13+": "minecraft:stone",
+          "properties": {"variant": ["stone", "granite", "diorite", "andesite"]}
+        },
+        "miniworld": {
+          "block_id": 1,
+          "name": "石头"
+        },
+        "roblox": {
+          "asset_id": "rbxassetid://stone_base"
+        }
+      },
+      "properties": {
+        "hardness": 1.5,
+        "resistance": 6.0,
+        "harvest_level": 1,
+        "tool": "pickaxe",
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:grass_block",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:grass",
+          "1.13+": "minecraft:grass_block",
+          "properties": {"snowy": false}
+        },
+        "miniworld": {
+          "block_id": 2,
+          "name": "草方块"
+        },
+        "roblox": {
+          "asset_id": "rbxassetid://grass_base"
+        }
+      },
+      "properties": {
+        "hardness": 0.6,
+        "resistance": 0.6,
+        "harvest_level": 0,
+        "tool": "shovel",
+        "sound": "grass",
+        "tint": "biome_grass"
+      }
+    },
+    {
+      "generic_id": "generic:dirt",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:dirt",
+          "1.13+": "minecraft:dirt",
+          "properties": {"variant": ["normal", "coarse"]}
+        },
+        "miniworld": {
+          "block_id": 3,
+          "name": "泥土"
+        }
+      },
+      "properties": {
+        "hardness": 0.5,
+        "resistance": 0.5,
+        "harvest_level": 0,
+        "tool": "shovel",
+        "sound": "gravel"
+      }
+    },
+    {
+      "generic_id": "generic:cobblestone",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:cobblestone",
+          "1.13+": "minecraft:cobblestone"
+        },
+        "miniworld": {
+          "block_id": 4,
+          "name": "圆石"
+        }
+      },
+      "properties": {
+        "hardness": 2.0,
+        "resistance": 6.0,
+        "harvest_level": 1,
+        "tool": "pickaxe",
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:planks_oak",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:planks",
+          "1.13+": "minecraft:oak_planks",
+          "properties": {"variant": "oak"}
+        },
+        "miniworld": {
+          "block_id": 5,
+          "name": "木板"
+        }
+      },
+      "properties": {
+        "hardness": 2.0,
+        "resistance": 3.0,
+        "harvest_level": 0,
+        "tool": "axe",
+        "sound": "wood",
+        "flammable": true
+      }
+    },
+    {
+      "generic_id": "generic:sapling_oak",
+      "generic_type": "PLANT",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:sapling",
+          "1.13+": "minecraft:oak_sapling",
+          "properties": {"stage": [0, 1]}
+        }
+      },
+      "properties": {
+        "hardness": 0.0,
+        "resistance": 0.0,
+        "collision": false,
+        "light": 0,
+        "sound": "grass"
+      }
+    },
+    {
+      "generic_id": "generic:bedrock",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:bedrock",
+          "1.13+": "minecraft:bedrock"
+        },
+        "miniworld": {
+          "block_id": 7,
+          "name": "基岩"
+        }
+      },
+      "properties": {
+        "hardness": -1.0,
+        "resistance": 3600000.0,
+        "harvest_level": 999,
+        "indestructible": true,
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:water",
+      "generic_type": "LIQUID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:flowing_water",
+          "1.13+": "minecraft:water",
+          "properties": {"level": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+        },
+        "miniworld": {
+          "block_id": 8,
+          "name": "水"
+        }
+      },
+      "properties": {
+        "hardness": 100.0,
+        "resistance": 100.0,
+        "liquid": true,
+        "flow": 8,
+        "light": 0,
+        "sound": "water"
+      }
+    },
+    {
+      "generic_id": "generic:lava",
+      "generic_type": "LIQUID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:flowing_lava",
+          "1.13+": "minecraft:lava",
+          "properties": {"level": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+        }
+      },
+      "properties": {
+        "hardness": 100.0,
+        "resistance": 100.0,
+        "liquid": true,
+        "flow": 4,
+        "light": 15,
+        "damage": 4,
+        "sound": "lava"
+      }
+    },
+    {
+      "generic_id": "generic:sand",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:sand",
+          "1.13+": "minecraft:sand",
+          "properties": {"variant": ["normal", "red"]}
+        },
+        "miniworld": {
+          "block_id": 12,
+          "name": "沙子"
+        }
+      },
+      "properties": {
+        "hardness": 0.5,
+        "resistance": 0.5,
+        "harvest_level": 0,
+        "tool": "shovel",
+        "gravity": true,
+        "sound": "sand"
+      }
+    },
+    {
+      "generic_id": "generic:gravel",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:gravel",
+          "1.13+": "minecraft:gravel"
+        }
+      },
+      "properties": {
+        "hardness": 0.6,
+        "resistance": 0.6,
+        "harvest_level": 0,
+        "tool": "shovel",
+        "gravity": true,
+        "sound": "gravel"
+      }
+    },
+    {
+      "generic_id": "generic:gold_ore",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:gold_ore",
+          "1.13+": "minecraft:gold_ore"
+        },
+        "miniworld": {
+          "block_id": 14,
+          "name": "金矿石"
+        }
+      },
+      "properties": {
+        "hardness": 3.0,
+        "resistance": 3.0,
+        "harvest_level": 2,
+        "tool": "pickaxe",
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:iron_ore",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:iron_ore",
+          "1.13+": "minecraft:iron_ore"
+        },
+        "miniworld": {
+          "block_id": 15,
+          "name": "铁矿石"
+        }
+      },
+      "properties": {
+        "hardness": 3.0,
+        "resistance": 3.0,
+        "harvest_level": 1,
+        "tool": "pickaxe",
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:coal_ore",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:coal_ore",
+          "1.13+": "minecraft:coal_ore"
+        },
+        "miniworld": {
+          "block_id": 16,
+          "name": "煤矿石"
+        }
+      },
+      "properties": {
+        "hardness": 3.0,
+        "resistance": 3.0,
+        "harvest_level": 0,
+        "tool": "pickaxe",
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:log_oak",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:log",
+          "1.13+": "minecraft:oak_log",
+          "properties": {"axis": ["y", "x", "z", "none"]}
+        },
+        "miniworld": {
+          "block_id": 17,
+          "name": "橡木"
+        }
+      },
+      "properties": {
+        "hardness": 2.0,
+        "resistance": 2.0,
+        "harvest_level": 0,
+        "tool": "axe",
+        "sound": "wood",
+        "flammable": true
+      }
+    },
+    {
+      "generic_id": "generic:leaves_oak",
+      "generic_type": "PLANT",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:leaves",
+          "1.13+": "minecraft:oak_leaves",
+          "properties": {"persistent": false, "distance": [1, 2, 3, 4, 5, 6, 7]}
+        },
+        "miniworld": {
+          "block_id": 18,
+          "name": "橡树叶"
+        }
+      },
+      "properties": {
+        "hardness": 0.2,
+        "resistance": 0.2,
+        "collision": false,
+        "light": 0,
+        "sound": "grass",
+        "flammable": true,
+        "tint": "biome_foliage"
+      }
+    },
+    {
+      "generic_id": "generic:glass",
+      "generic_type": "TRANSPARENT",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:glass",
+          "1.13+": "minecraft:glass"
+        },
+        "miniworld": {
+          "block_id": 20,
+          "name": "玻璃"
+        }
+      },
+      "properties": {
+        "hardness": 0.3,
+        "resistance": 0.3,
+        "transparent": true,
+        "light": 0,
+        "sound": "glass"
+      }
+    },
+    {
+      "generic_id": "generic:diamond_ore",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:diamond_ore",
+          "1.13+": "minecraft:diamond_ore"
+        },
+        "miniworld": {
+          "block_id": 56,
+          "name": "钻石矿石"
+        }
+      },
+      "properties": {
+        "hardness": 3.0,
+        "resistance": 3.0,
+        "harvest_level": 2,
+        "tool": "pickaxe",
+        "sound": "stone"
+      }
+    },
+    {
+      "generic_id": "generic:torch",
+      "generic_type": "LIGHT",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:torch",
+          "1.13+": "minecraft:torch",
+          "properties": {"facing": ["up", "north", "south", "east", "west"]}
+        },
+        "miniworld": {
+          "block_id": 50,
+          "name": "火把"
+        }
+      },
+      "properties": {
+        "hardness": 0.0,
+        "resistance": 0.0,
+        "collision": false,
+        "light": 14,
+        "sound": "wood"
+      }
+    },
+    {
+      "generic_id": "generic:chest",
+      "generic_type": "CHEST",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:chest",
+          "1.13+": "minecraft:chest",
+          "properties": {"facing": ["north", "south", "east", "west"]}
+        },
+        "miniworld": {
+          "block_id": 54,
+          "name": "箱子"
+        }
+      },
+      "properties": {
+        "hardness": 2.5,
+        "resistance": 2.5,
+        "harvest_level": 0,
+        "tool": "axe",
+        "sound": "wood",
+        "container": true,
+        "slots": 27
+      }
+    },
+    {
+      "generic_id": "generic:redstone_wire",
+      "generic_type": "REDSTONE",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:redstone_wire",
+          "1.13+": "minecraft:redstone_wire",
+          "properties": {"power": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+        }
+      },
+      "properties": {
+        "hardness": 0.0,
+        "resistance": 0.0,
+        "collision": false,
+        "light": 0,
+        "sound": "stone",
+        "signal": "analog"
+      }
+    },
+    {
+      "generic_id": "generic:door_oak",
+      "generic_type": "DOOR",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:wooden_door",
+          "1.13+": "minecraft:oak_door",
+          "properties": {"facing": ["north", "south", "east", "west"], "open": false, "hinge": ["left", "right"]}
+        }
+      },
+      "properties": {
+        "hardness": 3.0,
+        "resistance": 3.0,
+        "harvest_level": 0,
+        "tool": "axe",
+        "sound": "wood",
+        "interactable": true,
+        "double_block": true
+      }
+    },
+    {
+      "generic_id": "generic:ladder",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:ladder",
+          "1.13+": "minecraft:ladder",
+          "properties": {"facing": ["north", "south", "east", "west"]}
+        }
+      },
+      "properties": {
+        "hardness": 0.4,
+        "resistance": 0.4,
+        "collision": false,
+        "climbable": true,
+        "sound": "ladder"
+      }
+    },
+    {
+      "generic_id": "generic:furnace",
+      "generic_type": "BLOCK_ENTITY",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:furnace",
+          "1.13+": "minecraft:furnace",
+          "properties": {"facing": ["north", "south", "east", "west"], "lit": false}
+        }
+      },
+      "properties": {
+        "hardness": 3.5,
+        "resistance": 3.5,
+        "harvest_level": 1,
+        "tool": "pickaxe",
+        "sound": "stone",
+        "container": true,
+        "slots": 3,
+        "lit_light": 13
+      }
+    },
+    {
+      "generic_id": "generic:cobblestone_stairs",
+      "generic_type": "SOLID",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:stone_stairs",
+          "1.13+": "minecraft:cobblestone_stairs",
+          "properties": {"facing": ["north", "south", "east", "west"], "half": ["top", "bottom"]}
+        }
+      },
+      "properties": {
+        "hardness": 2.0,
+        "resistance": 6.0,
+        "harvest_level": 1,
+        "tool": "pickaxe",
+        "sound": "stone",
+        "stairs": true
+      }
+    },
+    {
+      "generic_id": "generic:crafting_table",
+      "generic_type": "BLOCK_ENTITY",
+      "games": {
+        "minecraft": {
+          "1.12.2": "minecraft:crafting_table",
+          "1.13+": "minecraft:crafting_table"
+        },
+        "miniworld": {
+          "block_id": 58,
+          "name": "工作台"
+        }
+      },
+      "properties": {
+        "hardness": 2.5,
+        "resistance": 2.5,
+        "harvest_level": 0,
+        "tool": "axe",
+        "sound": "wood",
+        "interactable": true
+      }
+    }
+  ],
+  "fallbacks": {
+    "minecraft": "minecraft:stone",
+    "miniworld": 1,
+    "roblox": "rbxassetid://default_block"
+  }
+}

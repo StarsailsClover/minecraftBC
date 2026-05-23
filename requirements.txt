@@ -1,0 +1,41 @@
+# minecraftBC Dependencies
+# minecraftBC 依赖
+
+# Core
+asyncio-mqtt>=0.13.0
+aiofiles>=23.0.0
+
+# Networking
+cryptography>=41.0.0
+pycryptodome>=3.19.0
+
+# Protocol
+websockets>=12.0
+python-socketio>=5.9.0
+
+# Data
+pyyaml>=6.0.1
+msgpack>=1.0.7
+orjson>=3.9.0
+
+# Utilities
+click>=8.1.0
+rich>=13.0.0
+typer>=0.9.0
+
+# Optional GUI
+# PyQt6>=6.5.0  # Uncomment for GUI support
+
+# Development (optional)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+mypy>=1.5.0
+
+# WebRTC Protocol Support (Phase 2)
+# aiortc>=0.9.0  # WebRTC implementation
+# av>=10.0.0     # Audio/Video support for WebRTC
+# pylibsrtp>=0.8.0  # SRTP encryption
+
+# Type Extensions
+typing-extensions>=4.0.0
