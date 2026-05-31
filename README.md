@@ -82,7 +82,65 @@ minecraftBC v2.0
 
 ---
 
-## FastLink双协议预留
+## FastLink集成 (v26.1+)
+
+### 版本管理
+
+```bash
+# 检查FastLink更新
+python -m src.main p2p --check-fastlink
+
+# 锁定FastLink版本
+python -m src.main p2p --lock-fastlink 26.1-20260523
+```
+
+### 特性
+
+| 特性 | 状态 | 说明 |
+|------|------|------|
+| 版本自动检查 | ✅ | 自动检测FastLink更新 |
+| 版本锁定 | ✅ | 锁定到稳定版本 |
+| 兼容性检查 | ✅ | 启动前验证接口兼容 |
+| 自动回滚 | ✅ | 更新失败自动回退 |
+| 多桥接模式 | ✅ | Subprocess/TCP/HTTP |
+
+### 架构
+
+```
+minecraftBC
+├── src/fastlink/
+│   ├── version_manager.py    # 版本管理与锁定
+│   ├── compatibility.py      # 接口兼容性检查
+│   ├── auto_updater.py       # 自动更新
+│   └── bridge.py             # 桥接层 (subprocess/TCP/HTTP)
+│
+└── src/connector/
+    └── hybrid_connector.py   # 使用bridge作为FastLink实现
+```
+
+### 使用方式
+
+```python
+from src.fastlink.bridge import FastLinkBridge, BridgeConfig
+
+# 配置
+config = BridgeConfig(
+    mode=BridgeMode.SUBPROCESS,
+    fastlink_path=Path("./FastLink")
+)
+
+# 初始化
+bridge = FastLinkBridge(config)
+await bridge.initialize()
+
+# 启动节点
+await bridge.start_p2p_node("0.0.0.0:8080")
+
+# 连接对等节点
+conn = await bridge.connect_to_peer("node_id", ("host", 8080))
+```
+
+### FastLink双协议预留
 
 当前实现使用Python重实现，FastLink Rust库修复后自动切换：
 

@@ -58,6 +58,12 @@ from protocol.mnmcp.proxy import MnMCPProxy, GameType
 from minecraft.lan_injector import LANInjector, LANConfig, LANWorldInfo
 from minecraft.protocol_adapter import MinecraftProtocolAdapter
 
+# FastLink集成
+from fastlink.version_manager import FastLinkVersionManager, VersionConstraint
+from fastlink.compatibility import CompatibilityChecker, InterfaceVersion
+from fastlink.auto_updater import FastLinkUpdater, UpdateConfig, UpdateStrategy
+from fastlink.bridge import FastLinkBridge, BridgeConfig, BridgeMode
+
 
 def setup_logging(settings: MinecraftBCSettings):
     """配置日志"""
@@ -131,7 +137,7 @@ async def load_identity(config: MinecraftBCSettings) -> NodeIdentity:
     return identity
 
 
-async def run_p2p_mode(args, config: MinecraftBCSettings, identity: NodeIdentity):
+async def run_p2p_mode(args, config: MinecraftBCSettings, identity: NodeIdentity, bridge=None):
     """
     运行P2P模式
     
@@ -232,7 +238,7 @@ async def run_p2p_mode(args, config: MinecraftBCSettings, identity: NodeIdentity
     return 0
 
 
-async def run_lan_mode(args, config: MinecraftBCSettings, identity: NodeIdentity):
+async def run_lan_mode(args, config: MinecraftBCSettings, identity: NodeIdentity, bridge=None):
     """
     运行LAN注入器模式
     
@@ -302,7 +308,7 @@ async def run_lan_mode(args, config: MinecraftBCSettings, identity: NodeIdentity
     return 0
 
 
-async def run_client_mode(args, config: MinecraftBCSettings, identity: NodeIdentity):
+async def run_client_mode(args, config: MinecraftBCSettings, identity: NodeIdentity, bridge=None):
     """
     运行客户端模式
     
@@ -386,7 +392,7 @@ async def run_client_mode(args, config: MinecraftBCSettings, identity: NodeIdent
     return 0
 
 
-async def run_mnmcp_mode(args, config: MinecraftBCSettings, identity: NodeIdentity):
+async def run_mnmcp_mode(args, config: MinecraftBCSettings, identity: NodeIdentity, bridge=None):
     """运行MnMCP代理模式"""
     logger = logging.getLogger('mnmcp')
     logger.info("Starting MnMCP mode...")
@@ -448,6 +454,8 @@ Examples:
     
     parser.add_argument('--config', '-c', help='配置文件路径')
     parser.add_argument('--verbose', '-v', action='store_true', help='详细输出')
+    parser.add_argument('--check-fastlink', action='store_true', help='检查FastLink更新')
+    parser.add_argument('--lock-fastlink', help='锁定FastLink版本')
     
     subparsers = parser.add_subparsers(dest='mode', help='运行模式')
     
@@ -504,7 +512,46 @@ Examples:
     
     logger.info(f"Node ID: {identity.node_id}")
     
-    # 运行对应模式
+    # FastLink集成
+    fastlink_bridge = None
+    
+    # 检查FastLink更新
+    if args.check_fastlink:
+        logger.info("Checking FastLink updates...")
+        version_mgr = FastLinkVersionManager()
+        await version_mgr.initialize()
+        update = await version_mgr.check_for_updates()
+        if update:
+            logger.info(f"FastLink update available: {update}")
+            print(f"\n⚠️  FastLink update available: {update.version}")
+            print("Run with --lock-fastlink to lock to current version")
+    
+    # 锁定FastLink版本
+    if args.lock_fastlink:
+        version_mgr = FastLinkVersionManager()
+        await version_mgr.initialize()
+        await version_mgr.lock_version(args.lock_fastlink)
+        logger.info(f"FastLink locked to {args.lock_fastlink}")
+        return 0
+    
+    # 兼容性检查
+    checker = CompatibilityChecker()
+    compat_report = await checker.check_compatibility()
+    if not compat_report.is_compatible:
+        logger.error(f"FastLink compatibility check failed:")
+        for err in compat_report.errors:
+            logger.error(f"  - {err}")
+        for feat in compat_report.missing_features:
+            logger.error(f"  - Missing feature: {feat}")
+        return 1
+    
+    # 初始化桥接器
+    bridge_config = BridgeConfig(
+        mode=BridgeMode.SUBPROCESS,
+        fastlink_path=Path(config.p2p.fastlink_path) if hasattr(config, 'p2p') else None,
+    )
+    fastlink_bridge = FastLinkBridge(bridge_config)
+    await fastlink_bridge.initialize()
     try:
         if args.mode == 'p2p':
             return asyncio.run(run_p2p_mode(args, config, identity))
