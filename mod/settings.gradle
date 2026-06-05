@@ -1,0 +1,25 @@
+rootProject.name = 'minecraftBC'
+
+include 'common'
+include 'fabric'
+include 'forge'
+include 'neoforge'
+
+// 版本配置 - 从gradle.properties读取
+ext.mcVersion = minecraft_version
+ext.architecturyVersion = architectury_version
+ext.fabricLoaderVersion = fabric_loader_version
+ext.fabricApiVersion = fabric_api_version
+ext.forgeVersion = forge_version
+ext.neoforgeVersion = neoforge_version
+
+// 多版本支持矩阵
+ext.supportedVersions = [
+    "1.16.5": ["fabric", "forge"],
+    "1.18.2": ["fabric", "forge"],
+    "1.19.2": ["fabric", "forge"],
+    "1.20.1": ["fabric", "forge", "neoforge"],
+    "1.20.4": ["fabric", "neoforge"],
+    "1.20.6": ["fabric", "neoforge"],
+    "1.21.1": ["fabric", "neoforge"]
+]

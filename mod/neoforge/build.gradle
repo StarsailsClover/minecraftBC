@@ -1,0 +1,55 @@
+plugins {
+    id "net.neoforged.gradle.userdev" version "7.0.120"
+    id "maven-publish"
+}
+
+archivesBaseName = "minecraftbc-neoforge"
+
+repositories {
+    maven { url "https://maven.neoforged.net/releases/" }
+    maven { url "https://maven.architectury.dev/" }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${rootProject.neoforge_version}"
+    
+    // Architectury
+    implementation "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
+    
+    // Common
+    implementation project(path: ":common", configuration: "namedElements")
+    
+    // Gson
+    implementation "com.google.code.gson:gson:2.10.1"
+}
+
+runs {
+    configureEach {
+        systemProperty "forge.logging.markers", "REGISTRIES"
+        systemProperty "forge.logging.console.level", "debug"
+        
+        modSource project.sourceSets.main
+    }
+    
+    client {
+        systemProperty "forge.enabledModLoading", "minecraftbc"
+        client()
+    }
+    
+    server {
+        server()
+    }
+    
+    gameTestServer {
+        type = "gameTestServer"
+    }
+    
+    data {
+        data()
+        programArguments.addAll("--mod", "minecraftbc", "--all", "--output", file("src/generated/resources").getAbsolutePath())
+    }
+}
+
+java {
+    withSourcesJar()
+}

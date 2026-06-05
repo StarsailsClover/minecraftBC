@@ -1,0 +1,44 @@
+plugins {
+    id "java"
+    id "maven-publish"
+}
+
+archivesBaseName = "minecraftbc-common"
+
+repositories {
+    mavenCentral()
+    maven { url "https://maven.fabricmc.net/" }
+    maven { url "https://maven.neoforged.net/releases/" }
+    maven { url "https://maven.architectury.dev/" }
+    maven { url "https://maven.minecraftforge.net/" }
+}
+
+dependencies {
+    // Mixin
+    compileOnly "org.spongepowered:mixin:${rootProject.mixin_version}:processor"
+    annotationProcessor "org.spongepowered:mixin:${rootProject.mixin_version}:processor"
+    
+    // Gson
+    implementation "com.google.code.gson:gson:2.10.1"
+    
+    // Logging
+    compileOnly "org.apache.logging.log4j:log4j-api:2.19.0"
+    compileOnly "org.apache.logging.log4j:log4j-core:2.19.0"
+    
+    // Netty (for ByteBuf)
+    compileOnly "io.netty:netty-buffer:4.1.97.Final"
+    compileOnly "io.netty:netty-common:4.1.97.Final"
+    
+    // Test
+    testImplementation "org.junit.jupiter:junit-jupiter:5.9.0"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+java {
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    options.release = 21
+}

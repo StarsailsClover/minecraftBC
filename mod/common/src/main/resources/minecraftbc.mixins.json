@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.minecraftbc.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "core.MixinConnectScreen",
+    "core.MixinServerSelectionList",
+    "core.MixinServerData"
+  ],
+  "client": [
+    "client.MixinServerListScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

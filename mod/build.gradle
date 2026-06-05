@@ -1,0 +1,48 @@
+plugins {
+    id "dev.architectury.loom" version "1.6-SNAPSHOT" apply false
+    id "maven-publish"
+}
+
+allprojects {
+    group = "com.minecraftbc"
+    version = "2.0.0"
+    
+    repositories {
+        mavenCentral()
+        maven { url "https://maven.fabricmc.net/" }
+        maven { url "https://maven.neoforged.net/releases/" }
+        maven { url "https://maven.architectury.dev/" }
+        maven { url "https://maven.minecraftforge.net/" }
+    }
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "maven-publish"
+    
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+        withSourcesJar()
+    }
+    
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+        options.release = 21
+    }
+    
+    // 禁用tests以避免缺少Minecraft依赖时的编译错误
+    tasks.test {
+        enabled = false
+    }
+}
+
+// 聚合任务
+tasks.register("buildAll") {
+    dependsOn subprojects.collect { it.tasks.named("build") }
+}
+
+tasks.register("cleanAll") {
+    dependsOn subprojects.collect { it.tasks.named("clean") }
+}

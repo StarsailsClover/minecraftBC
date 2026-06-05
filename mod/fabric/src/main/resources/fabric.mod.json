@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "minecraftbc",
+  "version": "${version}",
+  "name": "MinecraftBC",
+  "description": "P2P multiplayer without dedicated server",
+  "authors": [
+    "minecraftBC Team"
+  ],
+  "contact": {
+    "homepage": "https://github.com/minecraftbc",
+    "sources": "https://github.com/minecraftbc/minecraftbc"
+  },
+  "license": "MIT",
+  "icon": "assets/minecraftbc/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.minecraftbc.fabric.MinecraftBCFabric"
+    ],
+    "server": [
+      "com.minecraftbc.fabric.MinecraftBCFabric"
+    ]
+  },
+  "mixins": [
+    "minecraftbc.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*",
+    "minecraft": ">=1.20",
+    "java": ">=21",
+    "architectury": ">=12.0.0"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}

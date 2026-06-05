@@ -1,0 +1,7 @@
+{
+  "loaderVersion": "[1,)",
+  "license": "MIT",
+  "properties": {
+    "javafml": "[1,)"
+  }
+}

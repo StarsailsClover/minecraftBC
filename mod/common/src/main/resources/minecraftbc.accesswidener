@@ -1,0 +1,36 @@
+accessWidener v2 named
+
+# ServerSelectionList
+accessible class net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry
+accessible field net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$OnlineServerEntry serverData Lnet/minecraft/client/multiplayer/ServerData;
+
+accessible class net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$LANEntry
+accessible field net/minecraft/client/gui/screens/multiplayer/ServerSelectionList$LANEntry serverInfo Lnet/minecraft/client/server/LanServerInfo;
+
+# JoinMultiplayerScreen
+accessible field net/minecraft/client/gui/screens/multiplayer/JoinMultiplayerScreen serverSelectionList Lnet/minecraft/client/gui/screens/multiplayer/ServerSelectionList;
+
+# ServerList
+accessible field net/minecraft/client/multiplayer/ServerList servers Ljava/util/List;
+
+# ServerData
+accessible method net/minecraft/client/multiplayer/ServerData <init> (Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/client/multiplayer/ServerData$Type;)V
+accessible field net/minecraft/client/multiplayer/ServerData ip Ljava/lang/String;
+accessible field net/minecraft/client/multiplayer/ServerData name Ljava/lang/String;
+accessible field net/minecraft/client/multiplayer/ServerData motd Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/client/multiplayer/ServerData ping J
+accessible field net/minecraft/client/multiplayer/ServerData playerCount Ljava/lang/String;
+accessible field net/minecraft/client/multiplayer/ServerData maxPlayers Ljava/lang/String;
+accessible field net/minecraft/client/multiplayer/ServerData version Lnet/minecraft/network/chat/Component;
+
+# ConnectScreen
+accessible method net/minecraft/client/gui/screens/ConnectScreen startConnecting (Lnet/minecraft/client/gui/screens/Screen;Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;Lnet/minecraft/client/multiplayer/ServerData;Z)V
+accessible method net/minecraft/client/gui/screens/ConnectScreen getParentScreen ()Lnet/minecraft/client/gui/screens/Screen;
+
+# ServerAddress
+accessible method net/minecraft/client/multiplayer/resolver/ServerAddress <init> (Ljava/lang/String;I)V
+
+# FriendlyByteBuf
+accessible method net/minecraft/network/FriendlyByteBuf writeUtf (Ljava/lang/String;)Lnet/minecraft/network/FriendlyByteBuf;
+accessible method net/minecraft/network/FriendlyByteBuf readUtf ()Ljava/lang/String;
+accessible method net/minecraft/network/FriendlyByteBuf readUtf (I)Ljava/lang/String;
