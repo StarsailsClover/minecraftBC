@@ -7,7 +7,7 @@ FastLink Integration Module
 
 from .version_manager import FastLinkVersionManager, VersionInfo, VersionConstraint
 from .compatibility import CompatibilityChecker, InterfaceVersion
-from .auto_updater import AutoUpdater, UpdateConfig
+from .auto_updater import FastLinkUpdater, UpdateConfig
 from .bridge import FastLinkBridge, BridgeConfig
 
 __all__ = [
