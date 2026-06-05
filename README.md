@@ -4,6 +4,23 @@ Minecraft 桥接连接器 - 双协议P2P联机与跨游戏互联解决方案
 
 **English** | [中文](#中文说明)
 
+## 📁 Repository Structure
+
+```
+minecraftBC/
+├── src/              # Python External Server
+│   ├── external/     # TCP server for mod communication
+│   ├── connector/    # Hybrid P2P connector
+│   ├── fastlink/     # FastLink protocol
+│   └── main.py       # CLI entry point
+├── mod/              # Minecraft Mod Source (Java)
+│   ├── common/       # Cross-loader shared code
+│   ├── fabric/       # Fabric implementation
+│   └── neoforge/     # NeoForge implementation
+├── requirements.txt  # Python dependencies
+└── RELEASE_*.md      # Release notes
+```
+
 ---
 
 ## 中文说明
@@ -17,26 +34,29 @@ Minecraft 桥接连接器 - 双协议P2P联机与跨游戏互联解决方案
 | **零配置NAT穿透** | ✅ | 自动ICE/STUN，无需端口映射 |
 | **多版本支持** | ✅ | 1.12.2 - 1.20.x |
 | **离线模式** | ✅ | 无需正版验证 |
-| **跨游戏** | 🚧 | MnMCP预留接口 |
+| **Minecraft Mod** | ✅ | Fabric/NeoForge双加载器支持 |
 
-### 快速开始
+### 使用方式
 
+方式A: **Python外部服务器** (无需安装模组)
 ```bash
-# 安装依赖
 pip install -r requirements.txt
-
-# 启动P2P节点并托管世界
-python -m src.main p2p --port 0 --name MyNode --mc-port 25565
-
-# 或使用LAN注入器模式
-python -m src.main lan --mc-port 25565 --world-name "My World"
-
-# 客户端发现世界
-python -m src.main client
-
-# 连接到指定节点
-python -m src.main client --server <NODE_ID>
+python -m src.main p2p --port 0 --name MyNode
 ```
+
+方式B: **模组 + 外部服务器** (推荐)
+```bash
+# 1. 启动外部服务器
+python -m src.external.server --port 25566
+
+# 2. 构建并安装模组
+cd mod && ./gradlew build
+# 复制 mod/fabric/build/libs/*.jar 到 .minecraft/mods/
+
+# 3. 启动Minecraft，模组自动连接
+```
+
+---
 
 ### 工作原理
 
