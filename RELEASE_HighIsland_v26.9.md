@@ -1,7 +1,7 @@
-# HighIsland Release Candidate v26.9-20260606-RC
+# minecraftBC [HighIsland v26.10-20260606-RC]
 
 **Release Date:** 2026-06-06  
-**Version:** HighIsland v26.9-20260606-RC  
+**Version:** minecraftBC [HighIsland v26.10-20260606-RC]  
 **Status:** Release Candidate (Pre-Release)
 
 ---
@@ -23,14 +23,15 @@ minecraftBC/
 ## Version Naming
 
 ```
-HighIsland v{YY}.{COMMIT_COUNT}-{YYYYMMDD}-{TYPE}
+minecraftBC [大版本号 v{YY}.{COMMITS}-{YYYYMMDD}-{TYPE}]
 
-Current: HighIsland v26.9-20260606-RC
+Current: minecraftBC [HighIsland v26.10-20260606-RC]
 
-Explanation:
+Format:
+- minecraftBC: Project name
 - HighIsland: Major version name (new name every 50 commits)
 - 26: Year 2026 (last two digits)
-- 9: Total commit count in this version
+- 10: Total commit count
 - 20260606: Release date (YYYYMMDD)
 - RC: Release Candidate (Stable for production release)
 ```
@@ -141,4 +142,4 @@ MIT License - See LICENSE file
 
 **WARNING: This is a Release Candidate. Do not use in production.**
 
-**Version: HighIsland v26.9-20260606-RC**
+**minecraftBC [HighIsland v26.10-20260606-RC]**

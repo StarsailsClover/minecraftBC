@@ -1,8 +1,6 @@
-# HighIsland - Minecraft Bridge Connector
+# minecraftBC [HighIsland v26.10-20260606-RC]
 
 Minecraft 桥接连接器 - 双协议P2P联机与跨游戏互联解决方案
-
-版本: HighIsland v26.9-20260606-RC
 
 **English** | [中文](#中文说明)
 
@@ -111,14 +109,15 @@ HighIsland (minecraftBC v2.0)
 本项目采用大版本命名制：
 
 ```
-HighIsland v{年份后两位}.{提交次数}-{八位日期}-{版本类型}
+minecraftBC [大版本号 v{YY}.{COMMITS}-{YYYYMMDD}-{TYPE}]
 
-示例: HighIsland v26.9-20260606-RC
+当前: minecraftBC [HighIsland v26.10-20260606-RC]
 
 说明:
-- HighIsland: 大版本号命名 (每50个提交一个大版本)
+- minecraftBC: 项目名称
+- HighIsland: 大版本号命名 (每50个提交一个新版本名)
 - 26: 年份2026后两位
-- 9: 当前提交计数
+- 10: 当前提交计数
 - 20260606: 日期 (YYYYMMDD)
 - RC: 版本类型 (RC=Release Candidate, Stable=稳定版)
 ```
@@ -300,6 +299,6 @@ MIT License - 详见 [LICENSE](LICENSE)
 
 ---
 
-**版本: HighIsland v26.9-20260606-RC**
+**minecraftBC [HighIsland v26.10-20260606-RC]**
 
 **状态: Release Candidate (候选发布版)**
