@@ -758,3 +758,6 @@ if __name__ == '__main__':
         await p2p.stop()
     
     asyncio.run(main())
+
+# Alias for backward compatibility
+FastLinkP2P = P2PProtocol
