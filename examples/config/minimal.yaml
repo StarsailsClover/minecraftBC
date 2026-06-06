@@ -1,0 +1,19 @@
+# minecraftBC 最小配置示例
+# 适用于快速启动和测试
+
+network:
+  listen_port: 0
+  preferred_protocol: "fastlink"
+  external_server_port: 25566
+
+node:
+  name: "MyNode"
+
+minecraft:
+  version: "1.20.6"
+
+security:
+  enable_encryption: true
+
+logging:
+  level: "INFO"

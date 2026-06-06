@@ -1,0 +1,192 @@
+# minecraftBC 高级配置示例
+# minecraftBC HighIsland v26.15-20260606-RC
+
+# ============================================
+# 网络配置
+# ============================================
+network:
+  # 监听端口
+  # 0 = 自动分配
+  # 25565 = Minecraft默认端口 (如果托管世界)
+  listen_port: 0
+  
+  # P2P协议偏好
+  # 选项: fastlink, webrtc, auto
+  preferred_protocol: "fastlink"
+  
+  # 启用WebRTC备用 (推荐)
+  # 当FastLink失败时自动回退到WebRTC
+  enable_webrtc_fallback: true
+  
+  # 外部服务器端口 (供Minecraft模组连接)
+  external_server_port: 25566
+  
+  # 心跳间隔 (秒)
+  heartbeat_interval: 5
+  
+  # 连接超时 (秒)
+  connection_timeout: 30
+  
+  # 重连延迟 (秒)
+  reconnect_delay: 3
+
+# ============================================
+# 节点配置
+# ============================================
+node:
+  # 节点显示名称
+  name: "MyHighIslandNode"
+  
+  # 节点ID (自动生成，无需手动设置)
+  # id: "abc123..."
+  
+  # 节点描述
+  description: "A P2P Minecraft node"
+
+# ============================================
+# Minecraft配置
+# ============================================
+minecraft:
+  # 托管的Minecraft服务器端口
+  # 如果使用LAN注入模式，设置为0
+  server_port: 25565
+  
+  # Minecraft版本
+  version: "1.20.6"
+  
+  # 世界名称
+  world_name: "MyWorld"
+  
+  # 是否自动托管世界
+  auto_host: false
+
+# ============================================
+# 安全设置
+# ============================================
+security:
+  # 启用DTLS加密 (推荐)
+  enable_encryption: true
+  
+  # 身份密钥路径
+  # 如果文件不存在，将自动生成
+  identity_key_path: "config/identity.pem"
+  
+  # 允许离线玩家
+  allow_offline: true
+  
+  # 信任节点列表 (可选)
+  # trusted_nodes:
+  #   - "node-id-1"
+  #   - "node-id-2"
+
+# ============================================
+# NAT穿透配置
+# ============================================
+nat_traversal:
+  # 启用BirthdayPunch算法
+  enable_birthday_punch: true
+  
+  # ISP类型 (用于端口预测)
+  # 选项: auto, china_telecom, china_unicom, china_mobile, other
+  isp_type: "auto"
+  
+  # STUN服务器列表
+  stun_servers:
+    - "stun.l.google.com:19302"
+    - "stun1.l.google.com:19302"
+    - "stun.miwifi.com:3478"
+  
+  # TURN服务器 (备用)
+  # turn_servers:
+  #   - url: "turn:turn.example.com:3478"
+  #     username: "user"
+  #     password: "pass"
+
+# ============================================
+# 日志配置
+# ============================================
+logging:
+  # 日志级别
+  # 选项: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # 日志文件
+  file: "logs/minecraftbc.log"
+  
+  # 最大日志文件大小 (MB)
+  max_size: 10
+  
+  # 保留的日志文件数量
+  backup_count: 5
+  
+  # 输出到控制台
+  console_output: true
+
+# ============================================
+# 性能调优
+# ============================================
+performance:
+  # 工作线程数
+  # 0 = 自动 (CPU核心数)
+  worker_threads: 0
+  
+  # UDP缓冲区大小 (KB)
+  udp_buffer_size: 1024
+  
+  # TCP缓冲区大小 (KB)
+  tcp_buffer_size: 64
+  
+  # 最大并发连接数
+  max_connections: 100
+
+# ============================================
+# 发现配置
+# ============================================
+discovery:
+  # 启用mDNS发现
+  enable_mdns: true
+  
+  # mDNS服务名称
+  mdns_service: "_minecraftbc._tcp.local"
+  
+  # 发现超时 (秒)
+  timeout: 5
+  
+  # 定期广播间隔 (秒)
+  broadcast_interval: 30
+
+# ============================================
+# FastLink集成
+# ============================================
+fastlink:
+  # FastLink版本
+  version: "26.4-20260523"
+  
+  # 自动更新检查
+  auto_update_check: true
+  
+  # 版本锁定 (禁用自动更新)
+  # version_lock: "26.4-20260523"
+  
+  # 桥接模式
+  # 选项: subprocess, tcp, http
+  bridge_mode: "subprocess"
+  
+  # 桥接端口 (TCP/HTTP模式)
+  # bridge_port: 8080
+
+# ============================================
+# 开发者选项
+# ============================================
+developer:
+  # 调试模式
+  debug_mode: false
+  
+  # 详细日志
+  verbose_logging: false
+  
+  # 性能分析
+  enable_profiling: false
+  
+  # 模拟延迟 (ms，用于测试)
+  # simulate_latency: 100
