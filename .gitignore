@@ -19,79 +19,39 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
-# Virtual Environments
+# Virtual environments
 venv/
 env/
 ENV/
-env.bak/
-venv.bak/
-.venv/
 
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
-
-# Jupyter Notebook
-.ipynb_checkpoints
 
 # Testing
 .pytest_cache/
 .coverage
 htmlcov/
-.tox/
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Node (for any web components)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# minecraftBC specific
-*.key
-*.pem
-*.log
-logs/
-config/local*.yaml
-config/local*.json
-
-# Node identity (generated, should not be committed)
-.node_identity/
-*.node_id
-
-# Runtime files
-*.pid
-*.sock
 
 # OS
-Thumbs.db
 .DS_Store
-*.tmp
+Thumbs.db
 
-# Build artifacts
-*.exe
-*.msi
-*.dmg
-*.app
-*.deb
-*.rpm
-
-# Documentation build
-docs/_build/
-docs/_static/
-docs/_templates/
+# Minecraft mod build artifacts
+mod/build/
+mod/.gradle/
+mod/run/
+mod/*.log
 
 # Temporary files
 *.tmp
+*.temp
 *.bak
-*.orig
+
+# Local development
+*.local
+.env
