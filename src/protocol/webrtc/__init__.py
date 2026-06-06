@@ -1,12 +1,7 @@
 """
-WebRTC Protocol Implementation
-
-作为FastLink的备用协议，提供高兼容性的P2P连接。
-使用aiortc库实现ICE/STUN/TURN。
+WebRTC Protocol Module
 """
 
-from .webrtc_connector import WebRTCConnector
-from .ice_client import ICEClient
-from .signaling import WebRTCSignaling
+from .connection import WebRTCConnection
 
-__all__ = ['WebRTCConnector', 'ICEClient', 'WebRTCSignaling']
+__all__ = ['WebRTCConnection']
