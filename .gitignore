@@ -61,22 +61,17 @@ mod/*.log
 *.tar.gz
 *.rar
 
-# Non-essential documentation (kept in repo but not tracked)
-AUDIT_*.md
-CODE_REVIEW.md
-DEVELOPMENT_*.md
-FASTLINK_INTEGRATION.md
-FINAL_RELEASE_*.md
-GITHUB_*.md
-MARKET_RESEARCH.md
-PLANNING.md
-PROJECT_*.md
-RELEASE_SUMMARY.md
-SUMMARY.md
-VERSION.md
-VERSION_COMPATIBILITY_ANALYSIS.md
+# Documentation (non-essential)
+docs/
+mod/QUICK_START.md
+mod/README.md
+setup.py
 
-# Keep only essential docs:
-# README.md
+# Keep only:
+# README.md (root)
 # LICENSE
-# RELEASE_HighIsland_*.md (current release notes)
+# requirements.txt
+# src/ (Python source)
+# mod/ (Java mod source - except docs)
+# data/ (mappings)
+# config/ (default config)
