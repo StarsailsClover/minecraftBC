@@ -1,12 +1,12 @@
-# MinecraftBC Pre-Release v26.6-20260606
+# HighIsland Release Candidate v26.9-20260606-RC
 
 **Release Date:** 2026-06-06  
-**Version:** v26.6-20260606  
-**Status:** Pre-Release (Testing Only)
+**Version:** HighIsland v26.9-20260606-RC  
+**Status:** Release Candidate (Pre-Release)
 
 ---
 
-## 📦 Release Contents
+## Release Contents
 
 This release includes both the **Python External Server** and the **Minecraft Mod source code**.
 
@@ -15,12 +15,29 @@ minecraftBC/
 ├── src/              # Python External Server
 ├── mod/              # Minecraft Mod Source (Java)
 ├── requirements.txt  # Python dependencies
-└── RELEASE_v26.6.md  # This file
+└── RELEASE_*.md      # Release notes
 ```
 
 ---
 
-## 🔧 Build Instructions
+## Version Naming
+
+```
+HighIsland v{YY}.{COMMIT_COUNT}-{YYYYMMDD}-{TYPE}
+
+Current: HighIsland v26.9-20260606-RC
+
+Explanation:
+- HighIsland: Major version name (new name every 50 commits)
+- 26: Year 2026 (last two digits)
+- 9: Total commit count in this version
+- 20260606: Release date (YYYYMMDD)
+- RC: Release Candidate (Stable for production release)
+```
+
+---
+
+## Build Instructions
 
 ### Python External Server
 
@@ -51,12 +68,12 @@ cd mod
 ```
 
 **Output:**
-- Fabric: `mod/fabric/build/libs/*.jar`
-- NeoForge: `mod/neoforge/build/libs/*.jar`
+- Fabric: mod/fabric/build/libs/*.jar
+- NeoForge: mod/neoforge/build/libs/*.jar
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: Start External Server
 
@@ -76,30 +93,30 @@ cp fabric/build/libs/*-fabric.jar ~/.minecraft/mods/
 ### Step 3: Launch Minecraft
 
 1. Launch with Fabric/NeoForge
-2. Mod auto-connects to `127.0.0.1:25566`
+2. Mod auto-connects to 127.0.0.1:25566
 3. Open Multiplayer menu
 4. See P2P servers in list
 
 ---
 
-## 📋 What's Included
+## What's Included
 
 ### Python Components (src/)
-- ✅ TCP server for mod communication
-- ✅ Hybrid P2P connector (FastLink + WebRTC)
-- ✅ LAN world injection
-- ✅ Protocol abstraction layer
+- TCP server for mod communication
+- Hybrid P2P connector (FastLink + WebRTC)
+- LAN world injection
+- Protocol abstraction layer
 
 ### Java Components (mod/)
-- ✅ Cross-loader support (Fabric/NeoForge)
-- ✅ TCP communication with Python server
-- ✅ Mixin-based connection interception
-- ✅ Server list injection
-- ✅ Configuration system
+- Cross-loader support (Fabric/NeoForge)
+- TCP communication with Python server
+- Mixin-based connection interception
+- Server list injection
+- Configuration system
 
 ---
 
-## ⚠️ Known Issues
+## Known Issues
 
 - Build configuration needs verification
 - P2P node discovery incomplete
@@ -108,7 +125,7 @@ cp fabric/build/libs/*-fabric.jar ~/.minecraft/mods/
 
 ---
 
-## 🔗 Links
+## Links
 
 - **Repository:** https://github.com/StarsailsClover/minecraftBC
 - **Issues:** https://github.com/StarsailsClover/minecraftBC/issues
@@ -116,10 +133,12 @@ cp fabric/build/libs/*-fabric.jar ~/.minecraft/mods/
 
 ---
 
-## 📜 License
+## License
 
 MIT License - See LICENSE file
 
 ---
 
-**Do not use in production. This is a pre-release for testing.**
+**WARNING: This is a Release Candidate. Do not use in production.**
+
+**Version: HighIsland v26.9-20260606-RC**

@@ -1,10 +1,14 @@
-# minecraftBC v2.0 - Minecraft Bridge Connector
+# HighIsland - Minecraft Bridge Connector
 
 Minecraft 桥接连接器 - 双协议P2P联机与跨游戏互联解决方案
 
+版本: HighIsland v26.9-20260606-RC
+
 **English** | [中文](#中文说明)
 
-## 📁 Repository Structure
+---
+
+## 仓库结构
 
 ```
 minecraftBC/
@@ -29,22 +33,22 @@ minecraftBC/
 
 | 特性 | 状态 | 说明 |
 |------|------|------|
-| **双协议P2P** | ✅ | FastLink (主) + WebRTC (备用) |
-| **LAN注入** | ✅ | 拦截"对局域网开放"，共享到P2P网络 |
-| **零配置NAT穿透** | ✅ | 自动ICE/STUN，无需端口映射 |
-| **多版本支持** | ✅ | 1.12.2 - 1.20.x |
-| **离线模式** | ✅ | 无需正版验证 |
-| **Minecraft Mod** | ✅ | Fabric/NeoForge双加载器支持 |
+| 双协议P2P | 完成 | FastLink (主) + WebRTC (备用) |
+| LAN注入 | 完成 | 拦截"对局域网开放"，共享到P2P网络 |
+| 零配置NAT穿透 | 完成 | 自动ICE/STUN，无需端口映射 |
+| 多版本支持 | 完成 | 1.12.2 - 1.20.x |
+| 离线模式 | 完成 | 无需正版验证 |
+| Minecraft Mod | 完成 | Fabric/NeoForge双加载器支持 |
 
 ### 使用方式
 
-方式A: **Python外部服务器** (无需安装模组)
+方式A: Python外部服务器 (无需安装模组)
 ```bash
 pip install -r requirements.txt
 python -m src.main p2p --port 0 --name MyNode
 ```
 
-方式B: **模组 + 外部服务器** (推荐)
+方式B: 模组 + 外部服务器 (推荐)
 ```bash
 # 1. 启动外部服务器
 python -m src.external.server --port 25566
@@ -70,11 +74,11 @@ cd mod && ./gradlew build
 
 ---
 
-## 技术架构 v2.0
+## 技术架构 HighIsland
 
 ```
-minecraftBC v2.0
-│
+HighIsland (minecraftBC v2.0)
+|
 ├── 双协议连接器 (HybridConnector)
 │   ├── FastLink (主协议) - 低延迟，预留Rust接口
 │   └── WebRTC (备用协议) - 高兼容，自动降级
@@ -102,7 +106,26 @@ minecraftBC v2.0
 
 ---
 
-## FastLink集成 (v26.1+)
+## 版本命名
+
+本项目采用大版本命名制：
+
+```
+HighIsland v{年份后两位}.{提交次数}-{八位日期}-{版本类型}
+
+示例: HighIsland v26.9-20260606-RC
+
+说明:
+- HighIsland: 大版本号命名 (每50个提交一个大版本)
+- 26: 年份2026后两位
+- 9: 当前提交计数
+- 20260606: 日期 (YYYYMMDD)
+- RC: 版本类型 (RC=Release Candidate, Stable=稳定版)
+```
+
+---
+
+## FastLink集成
 
 ### 版本管理
 
@@ -118,113 +141,90 @@ python -m src.main p2p --lock-fastlink 26.1-20260523
 
 | 特性 | 状态 | 说明 |
 |------|------|------|
-| 版本自动检查 | ✅ | 自动检测FastLink更新 |
-| 版本锁定 | ✅ | 锁定到稳定版本 |
-| 兼容性检查 | ✅ | 启动前验证接口兼容 |
-| 自动回滚 | ✅ | 更新失败自动回退 |
-| 多桥接模式 | ✅ | Subprocess/TCP/HTTP |
-
-### 架构
-
-```
-minecraftBC
-├── src/fastlink/
-│   ├── version_manager.py    # 版本管理与锁定
-│   ├── compatibility.py      # 接口兼容性检查
-│   ├── auto_updater.py       # 自动更新
-│   └── bridge.py             # 桥接层 (subprocess/TCP/HTTP)
-│
-└── src/connector/
-    └── hybrid_connector.py   # 使用bridge作为FastLink实现
-```
-
-### 使用方式
-
-```python
-from src.fastlink.bridge import FastLinkBridge, BridgeConfig
-
-# 配置
-config = BridgeConfig(
-    mode=BridgeMode.SUBPROCESS,
-    fastlink_path=Path("./FastLink")
-)
-
-# 初始化
-bridge = FastLinkBridge(config)
-await bridge.initialize()
-
-# 启动节点
-await bridge.start_p2p_node("0.0.0.0:8080")
-
-# 连接对等节点
-conn = await bridge.connect_to_peer("node_id", ("host", 8080))
-```
-
-### FastLink双协议预留
-
-当前实现使用Python重实现，FastLink Rust库修复后自动切换：
-
-```python
-# 预留接口 (src/connector/hybrid_connector.py)
-class HybridConnector:
-    def __init__(self):
-        # 当前: Python重实现
-        self._fastlink_connector: Optional[P2PConnection] = None
-        
-        # FastLink修复后: PyO3绑定
-        # self._fastlink_connector: Optional[FastLinkRustBridge] = None
-```
-
-预留能力字段:
-- `supports_birthday_punch`: BirthdayPunch NAT穿透
-- `supports_multipath`: 多路径聚合
-- `supports_qos_evasion`: QoS规避
+| 版本自动检查 | 完成 | 自动检测FastLink更新 |
+| 版本锁定 | 完成 | 锁定到稳定版本 |
+| 兼容性检查 | 完成 | 启动前验证接口兼容 |
+| 自动回滚 | 完成 | 更新失败自动回退 |
+| 多桥接模式 | 完成 | Subprocess/TCP/HTTP |
 
 ---
 
-## 文件清单
+## 快速开始
+
+### 环境准备
+
+```bash
+# 克隆仓库
+git clone https://github.com/StarsailsClover/minecraftBC.git
+cd minecraftBC
+
+# 安装Python依赖
+pip install -r requirements.txt
+```
+
+### 启动P2P节点
+
+```bash
+# 方式1: 简单模式
+python -m src.main p2p
+
+# 方式2: 完整配置
+python -m src.main p2p \
+    --port 0 \
+    --name MyNode \
+    --mc-port 25565 \
+    --disable-webrtc
+```
+
+### 连接世界
+
+```bash
+# 发现世界
+python -m src.main client
+
+# 连接到指定节点
+python -m src.main client --server <NODE_ID>
+```
+
+---
+
+## 项目结构
 
 ```
 minecraftBC/
 ├── src/
-│   ├── main.py                          # 主程序入口
-│   ├── connector/                       # 双协议连接器
-│   │   ├── connector_base.py            # 抽象基类
-│   │   ├── hybrid_connector.py          # 混合连接器
-│   │   └── protocol_type.py             # 协议类型
-│   ├── protocol/
-│   │   ├── fastlink/                    # FastLink协议
-│   │   │   ├── crypto.py                # Ed25519/X25519加密
-│   │   │   ├── p2p.py                   # P2P实现
-│   │   │   ├── server.py                # 轻服务器
-│   │   │   └── packet.py                # 数据包定义
-│   │   ├── webrtc/                      # WebRTC备用协议
-│   │   │   ├── webrtc_connector.py      # WebRTC连接器
-│   │   │   ├── ice_client.py            # ICE客户端
-│   │   │   └── signaling.py             # 信令服务器
-│   │   └── mnmcp/                       # MnMCP跨游戏
-│   │       ├── proxy.py
-│   │       ├── mapping.py
-│   │       └── adapters/
-│   ├── minecraft/                       # Minecraft集成
-│   │   ├── lan_injector.py              # LAN注入器 ⭐
-│   │   ├── proxy_handler.py             # TCP代理
-│   │   └── protocol_adapter.py          # 协议适配
-│   ├── network/                         # 网络层
-│   └── config/                          # 配置管理
-│       ├── manager.py
-│       └── settings.py
-├── data/mappings/                       # 游戏映射表
-│   ├── block_mapping.json
-│   ├── entity_mapping.json
-│   └── item_mapping.json
-├── docs/                                # 文档
-│   ├── DEVELOPMENT_SUMMARY.md           # 开发总结
-│   ├── CODE_REVIEW.md                   # 代码审查
-│   ├── MARKET_RESEARCH.md               # 市场调研
-│   └── PLANNING.md                      # 开发计划
-├── config/
-│   └── default.yaml
+│   ├── main.py                 # CLI入口
+│   ├── cli/                    # 命令行接口
+│   │   ├── commands.py
+│   │   └── parser.py
+│   ├── config/                 # 配置管理
+│   │   ├── settings.py
+│   │   └── __init__.py
+│   ├── connector/              # 连接器
+│   │   ├── hybrid_connector.py
+│   │   └── __init__.py
+│   ├── external/               # 外部服务器
+│   │   ├── tcp_server.py
+│   │   └── server.py
+│   ├── minecraft/              # Minecraft集成
+│   │   ├── lan_injector.py
+│   │   └── proxy_handler.py
+│   ├── protocol/               # 协议实现
+│   │   ├── fastlink/
+│   │   ├── webrtc/
+│   │   └── mnmcp/
+│   └── network/                # 网络层
+│       ├── discovery.py
+│       └── connector.py
+├── mod/                        # Minecraft模组源代码
+│   ├── common/
+│   ├── fabric/
+│   └── neoforge/
+├── data/                       # 数据文件
+│   ├── mappings/
+│   └── icons/
+├── tests/                      # 测试
+├── docs/                       # 文档
 ├── requirements.txt
 ├── setup.py
 └── README.md
@@ -232,107 +232,74 @@ minecraftBC/
 
 ---
 
-## 市场定位
+## 开发
 
-### 竞品对比
-
-| 方案 | P2P | 开源 | 离线 | NAT穿透 | 特点 |
-|------|-----|------|------|---------|------|
-| **minecraftBC** | ✅ | ✅ | ✅ | ✅ | **双协议，自动降级** |
-| Essential Mod | ✅ | ❌ | ❌ | ✅ | 闭源，需正版 |
-| mcwifipnp | ❌ | ✅ | ✅ | ❌ | 仅局域网扩展 |
-| Hamachi | ❌ | ❌ | ✅ | ✅ | VPN，延迟高 |
-
-**核心差异化**: 开源 + P2P直连 + 双协议自动降级
-
----
-
-## 开发状态
-
-### 已完成 (Phase 1)
-
-- ✅ 双协议接口预留
-- ✅ WebRTC备用实现
-- ✅ LAN注入器
-- ✅ 配置管理
-- ✅ 多版本协议适配
-- ✅ 加密模块
-
-### 待完成 (Phase 2)
-
-- 🚧 TCP端口转发（玩家实际连接）
-- 🚧 玩家列表同步
-- 🚧 延迟测量
-- 🚧 单元测试
-- 🚧 WebRTC可选依赖安装指南
-
-### 等待FastLink (Phase 3)
-
-- ⏸️ PyO3绑定
-- ⏸️ BirthdayPunch实现
-- ⏸️ 多路径聚合
-
----
-
-## 快速命令参考
+### 本地开发
 
 ```bash
-# P2P模式（托管世界）
-python -m src.main p2p --port 0 --name MyNode --mc-port 25565 --world-name "Survival"
+# 安装开发依赖
+pip install -r requirements-dev.txt
 
-# LAN注入器模式
-python -m src.main lan --mc-port 25565 --world-name "My World"
+# 运行测试
+pytest
 
-# 客户端模式
-python -m src.main client
+# 代码格式化
+black src/
+isort src/
 
-# 带配置文件
-python -m src.main p2p --config /path/to/config.yaml
+# 类型检查
+mypy src/
+```
 
-# 详细日志
-python -m src.main p2p -v
+### 构建发布
+
+```bash
+# 构建Python包
+python setup.py sdist bdist_wheel
+
+# 构建Minecraft模组
+cd mod && ./gradlew build
 ```
 
 ---
 
-## 配置示例
+## 参与贡献
 
-```yaml
-# config.yaml
-node_name: "My minecraftBC Node"
+欢迎提交Issue和PR！
 
-p2p:
-  bind_host: "0.0.0.0"
-  bind_port: 0  # 随机端口
-  prefer_fastlink: true
-  fallback_timeout: 10.0
-  stun_servers:
-    - "stun:stun.l.google.com:19302"
+### 贡献流程
 
-minecraft:
-  mc_version: "1.20.1"
-  enable_offline: true
-  motd_prefix: "[P2P] "
-
-security:
-  key_file: "~/.minecraftBC/node.key"
-  enable_encryption: true
-
-logging:
-  level: "INFO"
-  console_output: true
-```
+1. Fork仓库
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送分支 (`git push origin feature/AmazingFeature`)
+5. 创建Pull Request
 
 ---
 
 ## 许可证
 
-MIT License - 详见 [LICENSE](./LICENSE)
+MIT License - 详见 [LICENSE](LICENSE)
 
 ---
 
-## 贡献
+## 免责声明
 
-欢迎贡献！请查看 [PLANNING.md](./PLANNING.md) 了解开发计划。
+本项目仅供学习和技术研究使用。使用本项目进行联机游戏时，请遵守相关游戏的服务条款。
 
-**特别说明**: FastLink Rust库修复后，将提供PyO3绑定贡献指南。
+作者不对因使用本项目造成的任何损失承担责任。
+
+---
+
+## 致谢
+
+- FastLink协议贡献者
+- Architectury团队 (多加载器框架)
+- Fabric和NeoForge社区
+- Mixin项目
+
+---
+
+**版本: HighIsland v26.9-20260606-RC**
+
+**状态: Release Candidate (候选发布版)**
