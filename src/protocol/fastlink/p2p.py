@@ -760,4 +760,4 @@ if __name__ == '__main__':
     asyncio.run(main())
 
 # Alias for backward compatibility
-FastLinkP2P = P2PProtocol
+FastLinkP2P = P2PConnection
