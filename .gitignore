@@ -1,3 +1,7 @@
+# ================================================
+# minecraftBC Git Ignore
+# ================================================
+
 # Python
 __pycache__/
 *.py[cod]
@@ -32,46 +36,90 @@ ENV/
 *.swo
 *~
 
-# Testing
+# Testing artifacts
 .pytest_cache/
 .coverage
 htmlcov/
+.tox/
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
+*.lnk
 
 # Minecraft mod build artifacts
 mod/build/
 mod/.gradle/
 mod/run/
 mod/*.log
+mod/*.md
 
 # Temporary files
 *.tmp
 *.temp
 *.bak
+*.cache
 
 # Local development
 *.local
 .env
+.envrc
 
 # Archives
 *.zip
 *.tar.gz
 *.rar
+*.7z
 
-# Documentation (non-essential)
-docs/
-mod/QUICK_START.md
-mod/README.md
-setup.py
+# ================================================
+# Non-essential documentation (remove from tracking)
+# ================================================
 
-# Keep only:
-# README.md (root)
+# Development notes (personal, not for release)
+ABDC_PLAN.md
+AUDIT_*.md
+CODE_REVIEW.md
+DEV_PLAN.md
+DEVELOPMENT_*.md
+FASTLINK_INTEGRATION.md
+FINAL_RELEASE_*.md
+GITHUB_*.md
+MARKET_RESEARCH.md
+PLANNING.md
+PROJECT_STRUCTURE.md
+RELEASE_SUMMARY.md
+SUMMARY.md
+TODO.md
+VERSION.md
+VERSION_COMPATIBILITY_ANALYSIS.md
+
+# Build scripts (platform specific)
+*.sh
+*.bat
+!mod/gradlew.bat
+!mod/gradlew
+
+# IDE configs
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# ================================================
+# KEEP THESE (Essential files)
+# ================================================
+# .gitignore
 # LICENSE
+# README.md
 # requirements.txt
 # src/ (Python source)
-# mod/ (Java mod source - except docs)
-# data/ (mappings)
-# config/ (default config)
+# mod/ (Java mod source - build configs and code)
+# data/ (Protocol mappings)
+# config/ (Default configs)
+# examples/ (Config examples)
+# docs/API_REFERENCE.md
+# docs/USER_MANUAL.md
+# tools/ (Utility scripts)
+# tests/ (Test files)
